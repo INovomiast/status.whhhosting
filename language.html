@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select a Language || WHHHosting Status</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        body{
+            background-color: rgb(0, 102, 255);
+        }
+        
+        select{
+            margin-top: 350px;
+            width: 50%;
+            height: 50px;
+            font-size: 35px;
+        }
+
+        input[type="submit"]{
+            width: 25%;
+            height: 40px;
+            background-color: royalblue;
+            font-size: 25px;
+            color: white;
+            border-radius: 20px;
+            border: black solid 2px;
+        }
+
+        input[type="submit"]:hover{
+            background-color: goldenrod;
+            color: black;
+            cursor:default;
+        }
+
+        h1{
+            transform: translateY(320px);
+            color: white;
+        }
+
+    </style>
+</head>
+<body onload="def()">
+    <center>
+            <h1>Select a language</h1>
+            <select name="" id="" style="text-align: center;">
+                <option selected onclick="def()">Select a language... (Default: English)</option>
+                <option onclick="lang_en()">English</option>
+                <option onclick="lang_es()">Español</option>
+                <option onclick="lang_ru()">Pусский</option>
+            </select><br>
+            <br>
+            <a href="" id="sbmt_lang"><input type="submit" value="" id="sbmt_btn"></a>
+    </center>
+
+    <script>
+        const sbmt = document.getElementById('sbmt_lang');
+        const sbmt_btn = document.getElementById('sbmt_btn');
+        function def(){
+            sbmt_btn.value = "No language selected!";
+            sbmt.href = '';
+        }
+        function lang_es(){
+            sbmt_btn.value = "Seleccionar Español";
+            sbmt.href = './lang/es/';
+            sbmt.onmouseover = function(){
+                sbmt_btn.style.cursor = 'none';
+            }
+        }
+        function lang_en(){
+            sbmt_btn.value = "Select English";
+            sbmt.href = './lang/en/';
+        }
+        function lang_ru(){
+            sbmt_btn.value = "Выберите русский";
+            sbmt.href = './lang/ru';
+        }
+    </script>
+</body>
+</html>
